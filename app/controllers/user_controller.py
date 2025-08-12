@@ -42,3 +42,17 @@ class UserController:
         """
 
         return UserService.get_user_by_phone_number(user_phone_number)
+
+    @staticmethod
+    def get_users_by_email_list(email_list: list[str]):
+
+        """
+        Gets a list of users from the database by email.
+
+        Args:
+            email_list (list[str]): A list of email addresses to retrieve
+
+        Returns:
+            list[dict[str, str]]: A list of dictionaries containing user information
+        """
+        return UserService.get_users_by_email_list(email_list)
