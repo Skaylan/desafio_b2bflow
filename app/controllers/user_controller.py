@@ -14,3 +14,17 @@ class UserController:
         """
 
         return UserService.get_users(limit)
+
+    @staticmethod
+    def get_user_by_email(user_email: str):
+        """
+        Gets a user from the database by email.
+
+        Args:
+            user_email (str): The email of the user to retrieve
+
+        Returns:
+            dict[str, str]: A dictionary containing user information
+        """
+
+        return UserService.get_user_by_email(user_email)
