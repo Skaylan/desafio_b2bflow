@@ -55,3 +55,15 @@ class UserRepository:
             return response.data
         except Exception as e:
             print(e)
+
+    @staticmethod
+    def insert_user(user_data: dict[str, str]) -> dict[str, str] | None:
+        try:
+            response = (
+                supabase_connection.client.table("user")
+                .insert(user_data)
+                .execute()
+            )
+            return response.data
+        except Exception as e:
+            print(e)
