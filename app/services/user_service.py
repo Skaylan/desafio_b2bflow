@@ -16,3 +16,7 @@ class UserService:
     @staticmethod
     def get_users_by_email_list(email_list: list[str]):
         return UserRepository.get_users_by_email_list(email_list)
+
+    @staticmethod
+    def insert_user(user_data: dict[str, str]) -> dict[str, str] | None:
+        return UserRepository.insert_user(user_data)
