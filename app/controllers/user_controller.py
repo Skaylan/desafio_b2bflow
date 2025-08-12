@@ -56,3 +56,18 @@ class UserController:
             list[dict[str, str]]: A list of dictionaries containing user information
         """
         return UserService.get_users_by_email_list(email_list)
+
+    @staticmethod
+    def insert_user(user_data: dict[str, str]) -> dict[str, str] | None:
+
+        """
+        Inserts a new user into the database.
+
+        Args:
+            user_data (dict[str, str]): A dictionary containing the user's information
+
+        Returns:
+            dict[str, str] | None: The inserted user's information, or None if the insertion failed
+        """
+
+        return UserService.insert_user(user_data)
