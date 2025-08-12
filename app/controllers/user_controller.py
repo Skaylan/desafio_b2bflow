@@ -28,3 +28,17 @@ class UserController:
         """
 
         return UserService.get_user_by_email(user_email)
+
+    @staticmethod
+    def get_user_by_phone_number(user_phone_number: str):
+        """
+        Gets a user from the database by phone number.
+
+        Args:
+            user_phone_number (str): The phone number of the user to retrieve
+
+        Returns:
+            dict[str, str]: A dictionary containing user information
+        """
+
+        return UserService.get_user_by_phone_number(user_phone_number)
