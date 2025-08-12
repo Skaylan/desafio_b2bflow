@@ -28,3 +28,17 @@ class UserRepository:
             return response.data
         except Exception as e:
             print(e)
+
+    @staticmethod
+    def get_user_by_phone_number(user_phone_number: str) -> dict[str, str] | None:
+        try:
+            response = (
+                supabase_connection.client.table("user")
+                .select("*")
+                .eq("phone_number", user_phone_number)
+                .single()
+                .execute()
+            )
+            return response.data
+        except Exception as e:
+            print(e)
