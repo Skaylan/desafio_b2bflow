@@ -12,3 +12,7 @@ class UserService:
     @staticmethod
     def get_user_by_phone_number(user_phone_number: str):
         return UserRepository.get_user_by_phone_number(user_phone_number)
+
+    @staticmethod
+    def get_users_by_email_list(email_list: list[str]):
+        return UserRepository.get_users_by_email_list(email_list)
