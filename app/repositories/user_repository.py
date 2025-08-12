@@ -14,3 +14,17 @@ class UserRepository:
             return response.data
         except Exception as e:
             print(e)
+
+    @staticmethod
+    def get_user_by_email(user_email: str) -> dict[str, str] | None:
+        try:
+            response = (
+                supabase_connection.client.table("user")
+                .select("*")
+                .eq("email", user_email)
+                .single()
+                .execute()
+            )
+            return response.data
+        except Exception as e:
+            print(e)
