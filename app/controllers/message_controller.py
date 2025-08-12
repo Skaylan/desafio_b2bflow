@@ -21,3 +21,12 @@ class MessageController:
             MessageService.send_message(message, user["phone_number"])
         except Exception as e:
             print(e)
+
+    @staticmethod
+    def send_message_by_user_phone_number(user_phone_number: str, message: str):
+        try:
+            user = UserService.get_user_by_phone_number(user_phone_number)
+            message = message.format(name=user["name"])
+            MessageService.send_message(message, user["phone_number"])
+        except Exception as e:
+            print(e)
