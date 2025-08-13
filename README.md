@@ -32,6 +32,36 @@ create table public.user (
 );
 ```
 
+## Inserindo dados na tabela `user`
+
+Você pode inserir novos registros na tabela `user` de duas formas:
+usando diretamente o editor SQL do Supabase ou via código Python.
+
+---
+
+### 1. Inserindo via Supabase (SQL Query)
+
+Abra o **SQL Editor** no painel do Supabase e execute o comando:
+
+```sql
+insert into public.user (name, email, phone_number)
+values ('Jhon Doe', 'jhondoe@email.com', '5599999999999');
+```
+
+### Inserindo via código Python
+
+Você também pode inserir um usuário diretamente pelo código usando o método `insert_user` do `UserController`:
+
+```python
+from app.controllers.user_controller import UserController
+
+UserController.insert_user({
+    "name": "Jhon Doe",
+    "email": "jhondoe@email.com",
+    "phone_number": "5599999999999"
+})
+```
+
 ## Como rodar o projeto localmente
 
 ### 1. Clone o repositório
